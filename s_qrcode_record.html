@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>兑换记录</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <style type="text/css">
+    	#nav li{padding: 0px;}
+    </style>
+</head>
+
+<body>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>收款记录</h1>
+	<div class="record tixn_record ge">
+		<div id="nav">
+		    <ul>
+		        <li class="navTitle"><span class="navContent">收款记录</span></li>
+		        <li><span class="navContent">付款记录</span></li>
+		    </ul>
+		</div>
+		<div class="tab">
+			<div class="contect">
+				<ul>
+					<li>
+						<p>币种：<s>USDT</s></p>
+						<i>数量：100.12125412</i>
+						<span>时间：2017年12月23日</span>
+					</li>
+					<li>
+						<p>币种：<s>USDT</s></p>
+						<i>数量：100.12125412</i>
+						<span>时间：2017年12月23日</span>
+					</li>
+				</ul>
+			</div>
+			<div class="contect two">
+				<ul>
+					<li>
+						<p>币种：<s>USDT</s></p>
+						<i>数量：99.12125412</i>
+						<span>时间：2017年12月23日</span>
+					</li>
+					<li>
+						<p>币种：<s>USDT</s></p>
+						<i>数量：99.12125412</i>
+						<span>时间：2017年12月23日</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var $div_li = $('#nav ul li');
+	$('#nav ul li').click(function(){
+	    $(this).addClass("navTitle")
+	    $(this).addClass("navTitle").siblings().removeClass("navTitle"); 
+	        var index =  $div_li.index(this);  
+		$("div.tab > div").eq(index).show().siblings().hide(); 
+	})
+</script>
+</html>

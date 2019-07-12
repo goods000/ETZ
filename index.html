@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>以太零</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/swiper.css">
+    	<script type="text/javascript" src="js/swiper.min.js"></script>
+	</head>
+	<style>
+	.bottom_nav dl dd:nth-child(1) a .dier {display: block !important;}
+	.bottom_nav dl dd:nth-child(1) a .diyi {display: none !important;}
+	.bottom_nav dl dd:nth-child(1) a span {color: #185cc7;}
+	</style>
+	<body style="background: #f5f5f5;">
+		<!--轮播-->
+		<div class="swiper-container swiper-container_sy">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+	            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+	            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+	            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+	        </div>
+	        <div class="swiper-pagination"></div>
+	        <div class="swiper-button-next"></div>
+	        <div class="swiper-button-prev"></div>
+	    </div>
+	    <!--公告-->
+		<div id="notice">
+			<img src="img/gonggao.png" class="notice_img"/>
+			<marquee class="dia" scrollAmount=2 >恭喜共享新零售商场开放成功！</marquee>
+			<a href="notice.html"><span class="tong">查看全部公告</span></a>	
+		</div>
+		<!---->
+		<div class="name_right">
+			<ul>
+				<li>
+					<a onClick="BSL.Qcode('0','qrcodeCallback')" class="right_img">
+						<img src="img/saoyisao.png" class="ge_img" />
+						<span class="right_title">
+							扫一扫
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="s_qrcode.html" class="right_img">
+						<img src="img/shoukuan.png" class="ge_img" />
+						<span class="right_title">
+							收款码
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="money.html" class="right_img">
+						<img src="img/tixian.png" class="ge_img" />
+						<span class="right_title">
+							提币
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="charge.html" class="right_img">
+						<img src="img/chong.png" class="ge_img" />
+						<span class="right_title">
+							充币
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="main">
+			<div class="fishName">
+				币种行情
+			</div>
+			<div class="bi">
+				<div class="bizhong_top_t">
+	   				<h3><i><img src="img/usdt.png"/></i><span>USDT</span></h3>
+	   				<a href="USDT兑换.html" class="next"><img src="img/next.png"/></a>
+				</div>
+	   			<div class="bizhong_top_t">
+	   				<div class="box">
+	   					<span class="box_zi">可用</span>
+	   					<span>5416546454</span>
+	   				</div>
+	   				<div class="box">
+	   					<span class="box_zi">价值</span>
+	   					<span>16.546454</span>
+	   				</div>
+	   				<div class="boxBtn">
+	   					-34342345
+	   				</div>
+	   			</div>
+			</div>
+			<div class="bi">
+				<div class="bizhong_top_t">
+	   				<h3><i><img src="img/z.png"/></i><span>ETZ</span></h3>
+	   				<!--<img src="img/next.png" class="next"/>-->
+	   			</div>
+	   			<div class="bizhong_top_t">
+	   				<div class="box">
+	   					<span class="box_zi">可用</span>
+	   					<span>22.4546</span>
+	   				</div>
+	   				<div class="box">
+	   					<span class="box_zi">价值</span>
+	   					<span>16.546454</span>
+	   				</div>
+	   				<div class="boxBtn1">
+	   					+4654178
+	   				</div>
+	   			</div>
+			</div>
+		</div>
+		
+		<!--导入底部导航栏-->
+		<div id="footer"></div>
+	</body>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    
+    function qrcodeCallback(result){
+		  var lang="${lang}";
+		  if(result.indexOf(window.location.host)==-1){ //等于-1表示这个字符串中没有o这个字符
+		   layer.msg('当前扫描的不属于ETZ二维码',{icon:5,time:1000});
+		  }else{
+		   window.location.href=result
+		  }
+    }
+</script>
+</html>

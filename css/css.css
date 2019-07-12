@@ -1,0 +1,29 @@
+/*公共样式*/
+*{margin: 0px;padding: 0px;font-size: 14px;font-family: "microsoft yahei";list-style: none;text-decoration: none;}
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
+input,button,select{outline:none;-webkit-appearance: none;}
+body{background: #fff;}
+
+.logo{width:100%;margin-top:20%;text-align: center;margin-bottom: 10%;color: #fff;}
+.logo img{display: block;width: 40%;margin: auto;margin-bottom: 3%;}
+.logo h2{font-size:1.8rem;}
+.logo p{font-size: 1.2rem;}
+.login input{width:100%;outline: none;background: none;border: 0px;border-bottom: 1px solid #dbdbdb;padding: 13px 40px;color: #333;margin-top:15px;
+box-sizing: border-box;font-size: 14px;box-sizing: border-box;}
+.login input::-webkit-input-placeholder{color: #d8dedf !important;}
+input::-webkit-input-placeholder{color:#d8dedf !important;}
+/*.login input:focus{border-bottom:1px solid #42c2a8;transition-duration:0.7s;}*/
+.login{width: 100%;margin: auto;border-radius:5px;padding:10px 10%;text-align: right;box-sizing: border-box;}
+.login h2{text-align: left;color: #333;font-weight: 500;font-size: 25px;margin-bottom: 20px;}
+.login h2 a{color: #666;padding-bottom:5px;}
+.login h2 a:nth-child(2){margin-left: 20px;}
+.login form a{color: #fff;margin-top:10px;text-decoration: none;}
+.locgin_i i{color: #333;font-size: 25px;margin-top:15px;display: block;}
+.locgin_i{position: relative;}
+.shouji p{background: #f0f3ff;padding: 10px;box-sizing: border-box;color: #185cc7;border-radius: 0 0 5px 5px;margin-top: -15px;margin-bottom: 10px;}
+#J_getCode{width: 32%;height:44px;display: block;position: absolute;margin-top:-44px;right:5%;line-height: 44px;color:#fff;}
+#J_resetCode{display:none;width:30%;height:44px;position: absolute;margin-top:-44px;right:5%;line-height: 44px;font-size: 12px;color:#fff;}
+#J_second{color: #fff;font-size:12px;}
+.tijiao{
+	background: #185cc7 !important; /* 标准的语法 */	
+	color:#FFFFFF !important;font-size: 16px !important;padding: 10px 45px !important;}

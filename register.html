@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>以太零</title>
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery.js" ></script>
+</head>
+<style>
+	.locgin_i i{position: absolute;top: 5px;margin-bottom: 0px;}
+	.login h2 a:nth-child(2){font-size:20px;font-weight:600;color: #333;border-bottom: 2px solid #677ee8;}
+	.login input{background:rgba(255,255,255,0.1);color: #fff;border-bottom: 0px;}
+	.locgin_i i{color: #fff;    position: absolute;left: 5px;}
+	.logo{margin-top:10% !important;}
+</style>
+<body style="width: 100%;height:100%;background: url(img/login.jpg) no-repeat;background-size:100% 100%;padding:0px;">
+	<div class="logo">
+		<img src="img/logo.png"/>
+		<h2>E T Z 系 统</h2>
+		<p>E T Z S Y S T E M</p>
+	</div>
+	<div class="login rst">
+		<form>
+			<div class="locgin_i">
+				<i class="iconfont icon-wo"></i>
+				<input type="text" placeholder="账号" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="登录密码" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="确认登录密码" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="二级密码" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="确认二级密码" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-wode"></i>
+				<input type="password" placeholder="推荐人ID" />
+			</div>
+			<div class="locgin_i">
+				<div>
+					<ul class="ulist">
+						
+						<li class="group">
+							<label class="label" for="phone"></label>
+							<div class="controls">
+							<i class="iconfont icon-shoujihaoma"></i>
+							<input type="number" placeholder="手机号码" id="phone" class="txt">
+							</div>
+						</li>
+						<li class="group">
+						<div class="controls" style="position: relative;">
+						<i class="iconfont icon-yanzhengma1"></i>
+						<input type="number" placeholder="验证码" id="code" class="txt">
+						<a class="btn btn-small get-code" style="width: 32%;height:44px;display: block;position: absolute;margin-top:-44px;right:0%;line-height: 44px;text-align: center;" value="获取验证码" onclick="getCode(this)" id="J_getCode" />获取验证码</a>
+						<a class="btn btn-small reset-code" id="J_resetCode" style="display:none;width:30%;height:44px;position: absolute;margin-top:-44px;right:5%;line-height: 44px;font-size: 12px;"><span id="J_second" style="color: #fff;font-size:12px;">60</span>秒后重发</a>
+						</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<input style="width: 100% !important;margin-top:15% !important;" type="button" class="tijiao" value="注 册" />
+			<div style="display: flex;justify-content:space-between;margin-bottom: 15%;">
+			<a href="login.html" style="color: #fff;text-align: center;display:block;">去登录</a>
+			<a href="login.html" style="color: #fff;text-align: center;display:block;">下载APP</a></div>
+		</form>
+	</div>
+<script>
+/*获取验证码*/
+var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+	}else{
+		$('#phone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#phone').val();
+	var pattern = /^1[0-9]{10}$/;
+	isPhone = 1;
+	if(phone == '') {
+		alert('请输入手机号码');
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		alert('请输入正确的手机号码');
+		isPhone = 0;
+		return;
+	}
+}
+//倒计时
+function resetCode(){
+	$('#J_getCode').hide();
+	$('#J_second').html('60');
+	$('#J_resetCode').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('#J_resetCode').hide();
+		}
+	},1000);
+}
+</script>
+</body>
+</html>
