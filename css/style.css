@@ -1,4 +1,4 @@
-i_tilte/*公告样式*/
+/*公告样式*/
 *{margin: 0px;padding: 0px;font-size: 14px;font-family: "microsoft yahei";list-style: none;text-decoration: none;}
 input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
 input,button{outline:none;-webkit-appearance: none;}
