@@ -35,4 +35,10 @@
 		</form>
 	</div>
 </body>
+<script type="text/javascript">
+		$("input").on("blur",function(){
+	        var toFix=$(this).offset().top;
+	        window.scroll(0,toFix);//失焦后强制让页面归位
+	    });
+</script>
 </html>
